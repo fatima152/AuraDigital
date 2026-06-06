@@ -1,16 +1,60 @@
-# React + Vite
+# Aura Digital - Premium Startup & Digital Agency Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, visually stunning, and highly responsive landing page website for **Aura Digital**, a premium startup and digital agency. Built using React, Vite, and custom CSS with sleek animations, modern typography, and smooth glassmorphism effects.
 
-Currently, two official plugins are available:
+## 🚀 Demo & Screenshots
+*(You can add a screenshot or deployment link here once hosted)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
+- **Modern & Premium Design**: Curated dark mode theme with interactive glowing background blobs.
+- **Fully Responsive**: Optimized for all screen sizes (mobile, tablet, and desktop).
+- **Navigation Bar**: Smooth scrolling and clean interactive layout.
+- **Hero Section**: Sleek copy, high-quality visuals, and a compelling Call-to-Action (CTA).
+- **About Us**: Professional agency introduction and statistics.
+- **Services Grid**: Clean card layout showcasing the agency's primary offerings.
+- **Courses/Academy**: Details about training, workshops, and educational programs.
+- **Contact & Footer**: Contact details, social links, and an interactive form.
 
-## React Compiler
+## 🛠️ Tech Stack
+- **Frontend**: React (JavaScript)
+- **Build Tool**: Vite
+- **Styling**: Vanilla CSS (Responsive Layouts, Custom Animations, Variables, Glassmorphism)
+- **Icons**: React Icons (or custom SVGs)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Getting Started
 
-## Expanding the ESLint configuration
+To run the project locally, follow these steps:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed.
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <your-repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Startup
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+Start the local Vite dev server:
+```bash
+npm run dev
+```
+Open your browser and navigate to `http://localhost:5174/` (or the port specified in your terminal).
+
+### Building for Production
+To build the application for deployment:
+```bash
+npm run build
+```
+The production-ready assets will be generated in the `dist` directory.
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
