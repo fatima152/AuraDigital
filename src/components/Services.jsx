@@ -1,74 +1,99 @@
 import { motion } from 'framer-motion';
-import { MonitorSmartphone, TrendingUp, Sparkles } from 'lucide-react';
-
-const Instagram = ({ size = 24, ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
 
 const servicesData = [
   {
-    title: "Web Development",
-    description: "Custom, responsive websites built from scratch to elevate your brand and drive conversions.",
-    icon: <MonitorSmartphone size={24} />
+    icon: '🌐',
+    title: 'Web Development',
+    description: 'Custom websites for your brand — fast, mobile-friendly, and built to convert visitors into customers.',
+    tag: 'HTML · CSS · React',
+    bg: 'rgba(124,111,255,0.1)'
   },
   {
-    title: "Account Monetization",
-    description: "Strategies to grow and monetize your Instagram, TikTok, and other social media accounts effectively.",
-    icon: <Instagram size={24} />
+    icon: '📱',
+    title: 'Social Media Setup & Monetization',
+    description: 'Instagram, TikTok account creation, optimization, and monetization strategy for your new brand.',
+    tag: 'Instagram · TikTok · Meta',
+    bg: 'rgba(255,107,157,0.1)'
   },
   {
-    title: "Meta Marketing",
-    description: "Data-driven ad campaigns on Facebook and Instagram targeting your ideal audience for maximum block.",
-    icon: <TrendingUp size={24} />
+    icon: '🎯',
+    title: 'Meta Ads & Marketing',
+    description: 'Run targeted ads on Facebook and Instagram to grow your business fast with proven strategies.',
+    tag: 'Meta Ads · ROI Focus',
+    bg: 'rgba(0,212,170,0.1)'
   },
   {
-    title: "Graphic Design",
-    description: "Stunning visual identities, logos, and digital assets that capture your brand's unique essence.",
-    icon: <Sparkles size={24} />
+    icon: '🎨',
+    title: 'Graphic Designing',
+    description: 'Logos, brand kits, social media posts, banners — all designed to make your brand unforgettable.',
+    tag: 'Branding · Social Posts',
+    bg: 'rgba(255,180,50,0.1)'
+  },
+  {
+    icon: '🎓',
+    title: 'Online Courses & Training',
+    description: 'Learn web development languages, marketing, and technical skills through our structured online courses.',
+    tag: 'Live + Recorded',
+    bg: 'rgba(124,111,255,0.1)'
+  },
+  {
+    icon: '⚙️',
+    title: 'Technical Training Program',
+    description: 'End-to-end tech training for students and professionals — from beginner to job-ready in weeks.',
+    tag: 'Beginner Friendly',
+    bg: 'rgba(0,212,170,0.1)'
   }
 ];
 
 const Services = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: 'easeOut' } 
+    }
+  };
+
   return (
-    <section id="services" className="section-padding">
-      <div className="container">
-        <h2>What We <span className="gradient-text">Do</span></h2>
-        <p className="section-subtitle">Comprehensive digital solutions to build, grow, and scale your newly started business.</p>
-        
-        <div className="services-grid">
-          {servicesData.map((service, index) => (
-            <motion.div 
-              key={index}
-              className="glass-card service-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="service-icon">
-                {service.icon}
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
+    <section id="services" className="services">
+      <div className="section-header">
+        <div className="section-tag">What We Do</div>
+        <h2>Complete Digital Services<br />for New Businesses</h2>
+        <p>From your first website to full social media monetization — we handle everything</p>
       </div>
+
+      <motion.div 
+        className="services-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+      >
+        {servicesData.map((svc, index) => (
+          <motion.div 
+            key={index} 
+            className="svc-card"
+            variants={cardVariants}
+          >
+            <div className="svc-icon" style={{ backgroundColor: svc.bg }}>
+              {svc.icon}
+            </div>
+            <h3>{svc.title}</h3>
+            <p>{svc.description}</p>
+            <span className="svc-tag">{svc.tag}</span>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };

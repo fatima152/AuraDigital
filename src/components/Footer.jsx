@@ -1,12 +1,19 @@
 const Footer = () => {
   return (
-    <footer style={{ borderTop: '1px solid var(--glass-border)', padding: '3rem 0', background: 'var(--bg-primary)' }}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-        <div className="logo gradient-text" style={{ fontSize: '1.2rem' }}>Aura Digital.</div>
-        <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-          &copy; {new Date().getFullYear()} Aura Digital. All rights reserved.
-        </div>
+    <footer>
+      <div>
+        <div className="logo">Nexus<span>Lab</span></div>
+        <p style={{ marginTop: '4px' }}>Your Digital Growth Partner — Pakistan</p>
       </div>
+      
+      <ul className="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <p>&copy; {new Date().getFullYear()} NexusLab. All rights reserved.</p>
     </footer>
   );
 };

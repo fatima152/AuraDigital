@@ -1,51 +1,104 @@
 import { motion } from 'framer-motion';
-import { Terminal, Rocket, Layers } from 'lucide-react';
 
 const coursesData = [
   {
-    title: "Master Frontend Web Design",
-    description: "Learn HTML, CSS, JavaScript, and React to build beautiful websites for yourself or clients.",
-    icon: <Terminal size={24} />
+    emoji: '💻',
+    level: 'Beginner → Advanced',
+    levelColor: 'var(--accent)',
+    title: 'Web Development Bootcamp',
+    description: 'HTML, CSS, JavaScript, and React — build real websites from scratch and deploy them live.',
+    duration: '8 Weeks · Certificate',
+    bg: 'rgba(124,111,255,0.08)'
   },
   {
-    title: "Social Media Masterclass",
-    description: "Understand the algorithms. Learn marketing tricks and Meta services to scale your brand.",
-    icon: <Rocket size={24} />
+    emoji: '📊',
+    level: 'All Levels',
+    levelColor: 'var(--accent2)',
+    title: 'Digital Marketing Mastery',
+    description: 'Learn Meta Ads, content strategy, and analytics to grow any brand online with real results.',
+    duration: '6 Weeks · Certificate',
+    bg: 'rgba(255,107,157,0.08)'
   },
   {
-    title: "Graphic Design Fundamentals",
-    description: "Master modern design principles and tools to create stunning visuals.",
-    icon: <Layers size={24} />
+    emoji: '🎨',
+    level: 'Beginner',
+    levelColor: 'var(--accent3)',
+    title: 'Graphic Design for Business',
+    description: 'Canva, Adobe basics, logo design, and social media graphics — build a stunning brand presence.',
+    duration: '4 Weeks · Certificate',
+    bg: 'rgba(0,212,170,0.08)'
+  },
+  {
+    emoji: '📱',
+    level: 'Intermediate',
+    levelColor: '#EF9F27',
+    title: 'Social Media Monetization',
+    description: 'TikTok, Instagram, and YouTube monetization strategies — turn followers into real income.',
+    duration: '5 Weeks · Certificate',
+    bg: 'rgba(255,180,50,0.08)'
   }
 ];
 
 const Courses = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { duration: 0.5, ease: 'easeOut' } 
+    }
+  };
+
   return (
-    <section id="courses" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
-      <div className="container">
-        <h2>Online <span className="gradient-text">Courses</span></h2>
-        <p className="section-subtitle">Learn the exact skills we use to start and scale modern businesses.</p>
-        
-        <div className="courses-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-          {coursesData.map((course, index) => (
-            <motion.div 
-              key={index}
-              className="glass-card course-card"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <div className="service-icon" style={{ background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-secondary)' }}>
-                {course.icon}
+    <section id="courses" className="courses-section">
+      <div className="section-header">
+        <div className="section-tag">Online Courses</div>
+        <h2>Learn the Skills That<br />Build Real Businesses</h2>
+        <p>Practical, hands-on courses taught by real professionals</p>
+      </div>
+
+      <motion.div 
+        className="courses-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+      >
+        {coursesData.map((course, index) => (
+          <motion.div 
+            key={index} 
+            className="course-card"
+            variants={cardVariants}
+          >
+            <div className="course-thumb" style={{ backgroundColor: course.bg }}>
+              {course.emoji}
+            </div>
+            <div className="course-body">
+              <div className="course-level" style={{ color: course.levelColor }}>
+                {course.level}
               </div>
               <h3>{course.title}</h3>
               <p>{course.description}</p>
-              <button className="btn-secondary" style={{ marginTop: '1.5rem', width: '100%' }}>Enroll Now</button>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+              
+              <div className="course-meta">
+                <span>{course.duration}</span>
+                <a href="#contact" style={{ textDecoration: 'none' }}>
+                  <button className="course-enroll">Enroll Now</button>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };
