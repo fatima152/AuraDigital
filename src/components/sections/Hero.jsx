@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  // Stagger wrapper settings
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 }
     }
   };
 
@@ -20,18 +17,16 @@ const Hero = () => {
 
   const rightVisualVariants = {
     hidden: { opacity: 0, x: 50, scale: 0.95 },
-    visible: { 
-      opacity: 1, 
-      x: 0, 
-      scale: 1, 
-      transition: { duration: 0.8, ease: 'easeOut', delay: 0.5 } 
+    visible: {
+      opacity: 1, x: 0, scale: 1,
+      transition: { duration: 0.8, ease: 'easeOut', delay: 0.5 }
     }
   };
 
   return (
     <>
       <section className="hero">
-        <motion.div 
+        <motion.div
           className="hero-content"
           variants={containerVariants}
           initial="hidden"
@@ -40,26 +35,26 @@ const Hero = () => {
           <motion.div className="hero-badge" variants={itemVariants}>
             <span className="badge-dot"></span> Pakistan's Digital Growth Partner
           </motion.div>
-          
+
           <motion.h1 variants={itemVariants}>
             Grow Your Brand <span className="highlight">Digitally</span> — We Build It All
           </motion.h1>
-          
+
           <motion.p variants={itemVariants}>
             Web development, social media monetization, graphic design, online courses, and complete digital marketing — everything your business needs to grow, in one place.
           </motion.p>
-          
+
           <motion.div className="hero-btns" variants={itemVariants}>
-            <a href="#contact" className="btn-primary" style={{ textDecoration: 'none' }}>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none' }}>
               Start Your Project
-            </a>
-            <a href="#services" className="btn-outline" style={{ textDecoration: 'none' }}>
+            </Link>
+            <Link to="/services" className="btn-outline" style={{ textDecoration: 'none' }}>
               Explore Services
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="hero-visual"
           variants={rightVisualVariants}
           initial="hidden"
@@ -67,7 +62,7 @@ const Hero = () => {
         >
           <div className="hero-card-main">
             <div className="hc-top">
-              <div className="hc-avatar">NL</div>
+              <div className="hc-avatar">AD</div>
               <div>
                 <div className="hc-name">Client Dashboard</div>
                 <div className="hc-sub">Brand Growth Tracker</div>
@@ -88,7 +83,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="hc-bar">
-              <motion.div 
+              <motion.div
                 className="hc-bar-fill"
                 initial={{ width: 0 }}
                 animate={{ width: '72%' }}
@@ -97,7 +92,7 @@ const Hero = () => {
             </div>
             <div className="hc-label">Monthly brand performance</div>
           </div>
-          
+
           <div className="floating-badge fb1">
             <span className="fnum">+240%</span>Instagram Growth
           </div>
@@ -107,8 +102,7 @@ const Hero = () => {
         </motion.div>
       </section>
 
-      {/* Stats Bar */}
-      <motion.div 
+      <motion.div
         className="stats-bar"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
