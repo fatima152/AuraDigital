@@ -9,7 +9,8 @@
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:build": "npm run build && cd server && npm install"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",
