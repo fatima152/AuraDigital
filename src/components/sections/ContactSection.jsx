@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { submitContact } from '../../api';
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
@@ -13,12 +14,7 @@ const ContactSection = () => {
     setLoading(true);
     setStatus({ type: '', message: '' });
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
+      const data = await submitContact(form);
       if (data.success) {
         setStatus({ type: 'success', message: 'Thank you! We will get back to you shortly.' });
         setForm({ name: '', email: '', phone: '', service: '', message: '' });

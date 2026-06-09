@@ -24,6 +24,10 @@ dist-ssr
 *.sln
 *.sw?
 
+# Environment files
+.env
+.env.local
+
 # Build/log files
 build-log.txt
 digital_agency_website_ui.html

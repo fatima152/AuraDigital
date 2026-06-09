@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { subscribeNewsletter } from '../api';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
@@ -11,12 +12,7 @@ const Newsletter = () => {
     setLoading(true);
     setStatus({ type: '', message: '' });
     try {
-      const res = await fetch('http://localhost:5000/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
+      const data = await subscribeNewsletter(email);
       if (data.success) {
         setStatus({ type: 'success', message: 'Successfully subscribed!' });
         setEmail('');
