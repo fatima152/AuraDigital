@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { StarIcon } from '../Icons';
 
 const testimonials = [
   { name: 'Ahmed R.', role: 'Startup Founder', text: 'Aura Digital built our entire online presence from scratch. Website, social media, branding — everything exceeded our expectations. Highly recommended!', rating: 5 },
@@ -26,7 +27,9 @@ const TestimonialsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div className="stars">{'★'.repeat(t.rating)}{'☆'.repeat(5 - t.rating)}</div>
+              <div className="stars">
+                {Array.from({ length: t.rating }, (_, j) => <StarIcon key={j} />)}
+              </div>
               <p className="testimonial-text">"{t.text}"</p>
               <div className="testimonial-author">
                 <div className="ta-avatar">{t.name.charAt(0)}</div>

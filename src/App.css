@@ -326,6 +326,15 @@ section.services { padding: 6rem 3rem; }
 /* ========== WHATSAPP BUTTON ========== */
 .whatsapp-btn { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 50; cursor: pointer; text-decoration: none; }
 
+/* ========== BACK TO TOP ========== */
+.back-to-top { position: fixed; bottom: 90px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); border: none; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 50; box-shadow: 0 4px 15px rgba(124, 111, 255, 0.3); }
+
+/* SVG sizing inside containers */
+.svc-icon svg, .course-thumb svg, .pc-image svg, .bc-image svg, .post-image-large svg, .sd-hero-icon svg, .sdc-icon svg { width: 100%; height: 100%; }
+.pc-image svg, .bc-image svg { width: 48px; height: 48px; }
+.post-image-large svg { width: 64px; height: 64px; }
+.sd-hero-icon svg { width: 56px; height: 56px; }
+
 /* ========== FOOTER ========== */
 footer { padding: 4rem 0 0; border-top: 1px solid var(--border); background: var(--bg); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 2rem; padding-bottom: 3rem; }

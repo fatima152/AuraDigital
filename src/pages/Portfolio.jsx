@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ShoppingBagIcon, ChartIcon, RestaurantIcon, BrandIcon, LearnIcon } from '../components/Icons';
 
 const projects = [
-  { title: 'E-Commerce Store', category: 'Web Development', desc: 'Full-featured online store with payment integration, product management, and admin dashboard.', image: '🛒', tags: ['React', 'Node.js', 'MongoDB'] },
-  { title: 'Brand Launch Campaign', category: 'Social Media', desc: 'Complete Instagram and TikTok campaign that grew followers from 0 to 12K in 3 months.', image: '📈', tags: ['Instagram', 'TikTok', 'Meta Ads'] },
-  { title: 'Restaurant Website', category: 'Web Development', desc: 'Modern responsive website with online ordering, menu management, and table booking system.', image: '🍽️', tags: ['React', 'Responsive', 'SEO'] },
-  { title: 'Brand Identity Package', category: 'Graphic Design', desc: 'Full brand identity including logo, color palette, typography, and social media templates.', image: '🎨', tags: ['Logo', 'Branding', 'Guidelines'] },
-  { title: 'Meta Ad Campaign', category: 'Marketing', desc: 'Targeted ad campaign achieving 4.2x ROAS with optimized audience targeting and creative.', image: '📊', tags: ['Meta Ads', 'ROI', 'Optimization'] },
-  { title: 'Online Academy Portal', category: 'Web Development', desc: 'Learning management system with course creation, student enrollment, and progress tracking.', image: '🎓', tags: ['React', 'Node.js', 'Database'] },
+  { title: 'E-Commerce Store', category: 'Web Development', desc: 'Full-featured online store with payment integration, product management, and admin dashboard.', image: ShoppingBagIcon, tags: ['React', 'Node.js', 'MongoDB'] },
+  { title: 'Brand Launch Campaign', category: 'Social Media', desc: 'Complete Instagram and TikTok campaign that grew followers from 0 to 12K in 3 months.', image: ChartIcon, tags: ['Instagram', 'TikTok', 'Meta Ads'] },
+  { title: 'Restaurant Website', category: 'Web Development', desc: 'Modern responsive website with online ordering, menu management, and table booking system.', image: RestaurantIcon, tags: ['React', 'Responsive', 'SEO'] },
+  { title: 'Brand Identity Package', category: 'Graphic Design', desc: 'Full brand identity including logo, color palette, typography, and social media templates.', image: BrandIcon, tags: ['Logo', 'Branding', 'Guidelines'] },
+  { title: 'Meta Ad Campaign', category: 'Marketing', desc: 'Targeted ad campaign achieving 4.2x ROAS with optimized audience targeting and creative.', image: ChartIcon, tags: ['Meta Ads', 'ROI', 'Optimization'] },
+  { title: 'Online Academy Portal', category: 'Web Development', desc: 'Learning management system with course creation, student enrollment, and progress tracking.', image: LearnIcon, tags: ['React', 'Node.js', 'Database'] },
 ];
 
 const Portfolio = () => {
@@ -30,7 +31,9 @@ const Portfolio = () => {
       <section className="portfolio-page">
         <div className="container">
           <div className="portfolio-grid">
-            {projects.map((project, i) => (
+            {projects.map((project, i) => {
+              const Image = project.image;
+              return (
               <motion.div
                 key={i}
                 className="portfolio-card"
@@ -39,7 +42,7 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <div className="pc-image">{project.image}</div>
+                <div className="pc-image"><Image /></div>
                 <div className="pc-body">
                   <div className="pc-category">{project.category}</div>
                   <h3>{project.title}</h3>
@@ -49,7 +52,7 @@ const Portfolio = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            ); })}
           </div>
         </div>
       </section>

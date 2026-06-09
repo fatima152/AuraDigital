@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { WebIcon, SocialIcon, AdsIcon, DesignIcon, CourseIcon, TrainingIcon } from '../components/Icons';
 
 const services = [
-  { id: 'web-development', icon: '🌐', title: 'Web Development', desc: 'Custom websites built with modern tech — fast, responsive, and designed to convert.', features: ['Responsive Design', 'React / Next.js', 'E-Commerce', 'SEO Optimized', 'Fast Loading'] },
-  { id: 'social-media', icon: '📱', title: 'Social Media Setup & Monetization', desc: 'Complete social media management — from account creation to full monetization strategy.', features: ['Instagram & TikTok Setup', 'Content Strategy', 'Monetization', 'Analytics', 'Growth Hacks'] },
-  { id: 'meta-ads', icon: '🎯', title: 'Meta Ads & Marketing', desc: 'Targeted Facebook and Instagram ad campaigns that deliver real ROI for your business.', features: ['Ad Campaign Setup', 'Audience Targeting', 'A/B Testing', 'Retargeting', 'Monthly Reports'] },
-  { id: 'graphic-design', icon: '🎨', title: 'Graphic Designing', desc: 'Professional branding and design that makes your business stand out from the competition.', features: ['Logo Design', 'Brand Identity', 'Social Media Posts', 'Banners & Flyers', 'Brand Guidelines'] },
-  { id: 'courses', icon: '🎓', title: 'Online Courses & Training', desc: 'Structured courses taught by industry professionals — from beginner to advanced levels.', features: ['Live Sessions', 'Recorded Content', 'Certificate', 'Project-Based', 'Job Ready'] },
-  { id: 'tech-training', icon: '⚙️', title: 'Technical Training Program', desc: 'End-to-end tech training for students and professionals — job-ready in weeks.', features: ['Full Stack Web', 'Digital Marketing', 'Graphic Design', 'Social Media', 'Career Support'] },
+  { id: 'web-development', icon: WebIcon, title: 'Web Development', desc: 'Custom websites built with modern tech — fast, responsive, and designed to convert.', features: ['Responsive Design', 'React / Next.js', 'E-Commerce', 'SEO Optimized', 'Fast Loading'] },
+  { id: 'social-media', icon: SocialIcon, title: 'Social Media Setup & Monetization', desc: 'Complete social media management — from account creation to full monetization strategy.', features: ['Instagram & TikTok Setup', 'Content Strategy', 'Monetization', 'Analytics', 'Growth Hacks'] },
+  { id: 'meta-ads', icon: AdsIcon, title: 'Meta Ads & Marketing', desc: 'Targeted Facebook and Instagram ad campaigns that deliver real ROI for your business.', features: ['Ad Campaign Setup', 'Audience Targeting', 'A/B Testing', 'Retargeting', 'Monthly Reports'] },
+  { id: 'graphic-design', icon: DesignIcon, title: 'Graphic Designing', desc: 'Professional branding and design that makes your business stand out from the competition.', features: ['Logo Design', 'Brand Identity', 'Social Media Posts', 'Banners & Flyers', 'Brand Guidelines'] },
+  { id: 'courses', icon: CourseIcon, title: 'Online Courses & Training', desc: 'Structured courses taught by industry professionals — from beginner to advanced levels.', features: ['Live Sessions', 'Recorded Content', 'Certificate', 'Project-Based', 'Job Ready'] },
+  { id: 'tech-training', icon: TrainingIcon, title: 'Technical Training Program', desc: 'End-to-end tech training for students and professionals — job-ready in weeks.', features: ['Full Stack Web', 'Digital Marketing', 'Graphic Design', 'Social Media', 'Career Support'] },
 ];
 
 const Services = () => {
@@ -45,9 +46,11 @@ const Services = () => {
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
           >
-            {services.map((svc, i) => (
+            {services.map((svc, i) => {
+              const Icon = svc.icon;
+              return (
               <motion.div key={i} className="service-detailed-card" variants={cardVariants}>
-                <div className="sdc-icon">{svc.icon}</div>
+                <div className="sdc-icon"><Icon /></div>
                 <div className="sdc-body">
                   <h2>{svc.title}</h2>
                   <p>{svc.desc}</p>
@@ -57,7 +60,7 @@ const Services = () => {
                   <Link to={`/services/${svc.id}`} className="btn-outline">Learn More</Link>
                 </div>
               </motion.div>
-            ))}
+            ); })}
           </motion.div>
         </div>
       </section>

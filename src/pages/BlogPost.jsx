@@ -1,11 +1,14 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { CodeIcon, SocialIcon, AdsIcon, DesignIcon, BriefcaseIcon } from '../components/Icons';
+
+const iconMap = { code: CodeIcon, social: SocialIcon, ads: AdsIcon, design: DesignIcon, career: BriefcaseIcon };
 
 const posts = {
   'web-dev-tips': {
     title: '5 Essential Web Development Tips for Startups',
     date: 'Jun 5, 2026', readTime: '4 min', category: 'Web Dev',
-    image: '🌐',
+    image: 'code',
     content: `In today's digital-first world, your website is often the first impression customers have of your business. Here are five essential tips every startup should follow when building their online presence.
 
 1. Prioritize Mobile-First Design
@@ -31,7 +34,7 @@ Clear navigation, strong CTAs, readable typography, and intuitive forms make the
   'instagram-monetization': {
     title: 'How to Monetize Instagram in 2026',
     date: 'May 28, 2026', readTime: '6 min', category: 'Social Media',
-    image: '📱',
+    image: 'social',
     content: `Instagram remains one of the most powerful platforms for creators and businesses to generate income. Here's how to monetize effectively in 2026.
 
 1. Build a Niche Audience
@@ -57,7 +60,7 @@ Reply to comments, use Stories for polls and Q&As, and build genuine relationshi
   'meta-ads-roi': {
     title: 'Getting 4x ROI with Meta Ads',
     date: 'May 15, 2026', readTime: '5 min', category: 'Marketing',
-    image: '🎯',
+    image: 'ads',
     content: `Running Meta Ads that actually generate profit requires strategy, testing, and optimization. Here's how we help clients achieve 4x+ ROAS.
 
 1. Define Your Funnel
@@ -83,7 +86,7 @@ Review campaign performance daily. Shift budget toward winning ad sets, pause un
   'branding-guide': {
     title: 'The Complete Guide to Brand Identity',
     date: 'Apr 30, 2026', readTime: '7 min', category: 'Design',
-    image: '🎨',
+    image: 'design',
     content: `A strong brand identity sets you apart from competitors and builds trust with your audience. Here's how to build one from scratch.
 
 1. Define Your Brand Strategy
@@ -109,7 +112,7 @@ Every piece of content — from a social media post to a website page to an emai
   'freelance-tips': {
     title: 'Starting a Freelance Career in Pakistan',
     date: 'Apr 18, 2026', readTime: '5 min', category: 'Career',
-    image: '💼',
+    image: 'career',
     content: `Freelancing in Pakistan offers incredible opportunities. Here's a practical guide to getting started in 2026.
 
 1. Pick One Skill and Master It
@@ -160,7 +163,7 @@ const BlogPost = () => {
             transition={{ duration: 0.6 }}
           >
             <Link to="/blog" className="back-link">&larr; All Posts</Link>
-            <div className="post-image-large">{post.image}</div>
+            <div className="post-image-large">{(() => { const Img = iconMap[post.image]; return Img ? <Img /> : null; })()}</div>
             <div className="post-meta">
               <span className="bc-category">{post.category}</span>
               <span>{post.date} · {post.readTime}</span>

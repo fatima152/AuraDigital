@@ -1,39 +1,40 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { WebIcon, SocialIcon, AdsIcon, DesignIcon, CourseIcon, TrainingIcon } from '../components/Icons';
 
 const servicesData = {
   'web-development': {
-    icon: '🌐', title: 'Web Development', tagline: 'Custom websites built to perform',
+    icon: WebIcon, title: 'Web Development', tagline: 'Custom websites built to perform',
     desc: 'We build fast, mobile-friendly, and SEO-optimized websites using modern technologies like React, Next.js, and Node.js. Every site is designed to convert visitors into customers.',
     process: ['Discovery & Planning', 'UI/UX Design', 'Development', 'Testing & QA', 'Deployment', 'Maintenance'],
     tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Vite', 'Framer Motion'],
   },
   'social-media': {
-    icon: '📱', title: 'Social Media Setup & Monetization', tagline: 'Turn followers into income',
+    icon: SocialIcon, title: 'Social Media Setup & Monetization', tagline: 'Turn followers into income',
     desc: 'Complete social media management including account setup, content strategy, audience growth, and monetization through Instagram, TikTok, and YouTube.',
     process: ['Audit & Strategy', 'Account Optimization', 'Content Creation', 'Growth Hacks', 'Monetization Setup', 'Analytics'],
     tech: ['Instagram', 'TikTok', 'YouTube', 'Meta Business', 'Canva', 'Analytics'],
   },
   'meta-ads': {
-    icon: '🎯', title: 'Meta Ads & Marketing', tagline: 'Targeted campaigns that deliver ROI',
+    icon: AdsIcon, title: 'Meta Ads & Marketing', tagline: 'Targeted campaigns that deliver ROI',
     desc: 'Facebook and Instagram advertising campaigns designed to reach your ideal audience, generate leads, and maximize return on ad spend.',
     process: ['Goal Setting', 'Audience Research', 'Ad Creation', 'A/B Testing', 'Optimization', 'Reporting'],
     tech: ['Meta Ads Manager', 'Facebook Pixel', 'Lookalike Audiences', 'Retargeting', 'Analytics'],
   },
   'graphic-design': {
-    icon: '🎨', title: 'Graphic Designing', tagline: 'Branding that stands out',
+    icon: DesignIcon, title: 'Graphic Designing', tagline: 'Branding that stands out',
     desc: 'Professional graphic design services including logo creation, brand identity, social media graphics, banners, and complete brand kits.',
     process: ['Brief & Research', 'Concept Development', 'Design Creation', 'Revisions', 'Final Delivery', 'Brand Guidelines'],
     tech: ['Adobe Photoshop', 'Adobe Illustrator', 'Canva', 'Figma', 'After Effects'],
   },
   'courses': {
-    icon: '🎓', title: 'Online Courses & Training', tagline: 'Learn from industry professionals',
+    icon: CourseIcon, title: 'Online Courses & Training', tagline: 'Learn from industry professionals',
     desc: 'Structured online courses covering web development, digital marketing, graphic design, and social media monetization. Live sessions with recorded backups.',
     process: ['Curriculum Design', 'Content Creation', 'Live Sessions', 'Assignments', 'Projects', 'Certification'],
     tech: ['HTML/CSS', 'JavaScript', 'React', 'Marketing', 'Design Tools'],
   },
   'tech-training': {
-    icon: '⚙️', title: 'Technical Training Program', tagline: 'From beginner to job-ready',
+    icon: TrainingIcon, title: 'Technical Training Program', tagline: 'From beginner to job-ready',
     desc: 'Comprehensive training program for students and professionals. Covers full-stack development, digital marketing, graphic design, and career preparation.',
     process: ['Skill Assessment', 'Learning Path', 'Hands-on Training', 'Real Projects', 'Portfolio Building', 'Job Support'],
     tech: ['Full Stack', 'Digital Marketing', 'Design', 'Soft Skills', 'Interview Prep'],
@@ -56,6 +57,8 @@ const ServiceDetail = () => {
     );
   }
 
+  const Icon = service.icon;
+
   return (
     <>
       <section className="page-hero">
@@ -66,7 +69,7 @@ const ServiceDetail = () => {
             transition={{ duration: 0.6 }}
           >
             <Link to="/services" className="back-link">&larr; All Services</Link>
-            <div className="sd-hero-icon">{service.icon}</div>
+            <div className="sd-hero-icon"><Icon /></div>
             <h1>{service.title}</h1>
             <p className="sd-tagline">{service.tagline}</p>
           </motion.div>
