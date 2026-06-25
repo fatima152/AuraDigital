@@ -73,7 +73,7 @@ const Contact = () => {
                 </div>
                 <div className="info-item">
                   <div className="info-icon">🕐</div>
-                  <div><strong>Working Hours</strong><br />Mon-Sat: 10AM - 8PM</div>
+                  <div><strong>Working Hours</strong><br />Mon to Sun — Always Open</div>
                 </div>
               </div>
 
