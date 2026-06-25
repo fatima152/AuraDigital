@@ -53,7 +53,7 @@ app.post('/api/contact', async (req, res) => {
   console.log(`New contact from ${name} <${email}>`);
 
   await sendEmail({
-    to: process.env.EMAIL_USER || 'hello@auradigital.pk',
+    to: process.env.EMAIL_USER || 'skillora836@gmail.com',
     subject: `New Contact: ${name} — ${service || 'General'}`,
     html: `
       <h2>New Contact Form Submission</h2>
@@ -76,7 +76,7 @@ app.post('/api/newsletter', async (req, res) => {
   console.log(`New newsletter subscriber: ${email}`);
 
   await sendEmail({
-    to: process.env.EMAIL_USER || 'hello@auradigital.pk',
+    to: process.env.EMAIL_USER || 'skillora836@gmail.com',
     subject: 'New Newsletter Subscription',
     html: `<p><strong>New subscriber:</strong> ${email}</p>`,
   });

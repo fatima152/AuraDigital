@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const team = [
-  { name: 'Abdullah', role: 'CEO & Founder', bio: 'Visionary entrepreneur passionate about digital transformation and helping brands grow online.' },
-  { name: 'Hassan', role: 'COO & Co-Founder', bio: 'Operations expert ensuring every project delivers excellence and measurable results.' },
+  { name: 'Fatima Anjum', role: 'CEO & Founder', bio: 'Visionary entrepreneur passionate about digital transformation and helping brands grow online.' },
+  { name: 'Rehab Tahir', role: 'COO & Co-Founder', bio: 'Operations expert ensuring every project delivers excellence and measurable results.' },
 ];
 
 const TeamSection = () => {

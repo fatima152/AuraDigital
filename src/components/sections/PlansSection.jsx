@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 const plansData = [
   {
     name: 'Starter', desc: 'For businesses just getting started',
-    price: 'PKR 15K', period: '/one-time',
+    price: 'PKR 10K', period: '/one-time',
     features: ['1-Page Website', 'Instagram Profile Setup', 'Basic Logo Design', 'Social Media Starter Kit', '1 Month Support'],
     btnText: 'Get Started', featured: false
   },
   {
     name: 'Growth', desc: 'Full brand launch package',
-    price: 'PKR 45K', period: '/month',
+    price: 'PKR 40K', period: '/month',
     features: ['5-Page Custom Website', 'Instagram + TikTok Setup', 'Meta Ads Management', 'Full Brand Identity', 'Monthly Reports', 'Priority Support'],
     btnText: 'Choose Growth', featured: true
   },
   {
     name: 'Elite', desc: 'Complete digital transformation',
-    price: 'Custom', period: '/quote',
+    price: 'PKR 80K', period: '/project',
     features: ['Full E-Commerce Website', 'All Platforms Managed', 'Advanced Meta Campaigns', 'Video + Motion Graphics', 'Dedicated Account Manager', 'Team Training Included'],
     btnText: 'Contact Us', featured: false
   }

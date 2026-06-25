@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const faqs = [
   { q: 'What services does Aura Digital offer?', a: 'We offer web development, social media setup & monetization, Meta Ads & marketing, graphic design, online courses, and technical training.' },
-  { q: 'How much does a website cost?', a: 'Packages start from PKR 15,000 for a single-page site. Custom sites are quoted based on requirements.' },
+  { q: 'How much does a website cost?', a: 'Packages start from PKR 10,000 for a single-page site. Custom sites are quoted based on requirements.' },
   { q: 'How long does it take to build a website?', a: 'Standard websites take 1-2 weeks. Complex projects may take 3-6 weeks.' },
   { q: 'Do you offer free consultations?', a: 'Yes! We offer a free initial consultation to understand your needs and provide a proposal.' },
 ];

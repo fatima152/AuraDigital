@@ -61,11 +61,11 @@ const Contact = () => {
               <div className="info-items">
                 <div className="info-item">
                   <div className="info-icon">📧</div>
-                  <div><strong>Email</strong><br />hello@auradigital.pk</div>
+                  <div><strong>Email</strong><br />skillora836@gmail.com</div>
                 </div>
                 <div className="info-item">
                   <div className="info-icon">📱</div>
-                  <div><strong>Phone / WhatsApp</strong><br />+92 300 1234567</div>
+                  <div><strong>Phone / WhatsApp</strong><br />+92 314 8708929</div>
                 </div>
                 <div className="info-item">
                   <div className="info-icon">📍</div>
@@ -106,7 +106,7 @@ const Contact = () => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="phone">Phone Number</label>
-                  <input type="text" id="phone" name="phone" value={form.phone} onChange={handleChange} placeholder="+92 300 1234567" />
+                  <input type="text" id="phone" name="phone" value={form.phone} onChange={handleChange} placeholder="+92 314 8708929" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="service">Service Interested In</label>

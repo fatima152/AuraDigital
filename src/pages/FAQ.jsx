@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const faqs = [
   { q: 'What services does Aura Digital offer?', a: 'We offer web development, social media setup & monetization, Meta Ads & marketing, graphic design, online courses, and technical training programs.' },
-  { q: 'How much does a website cost?', a: 'Our website packages start from PKR 15,000 for a single-page site. For custom multi-page or e-commerce sites, prices vary based on requirements. Contact us for a free quote.' },
+  { q: 'How much does a website cost?', a: 'Our website packages start from PKR 10,000 for a single-page site. For custom multi-page or e-commerce sites, prices vary based on requirements. Contact us for a free quote.' },
   { q: 'How long does it take to build a website?', a: 'A standard website takes 1-2 weeks. Complex e-commerce or custom web applications may take 3-6 weeks depending on the scope.' },
   { q: 'Do you offer social media management?', a: 'Yes! We handle Instagram and TikTok account setup, content creation, growth strategies, and monetization. Our Meta Ads service covers paid campaigns.' },
   { q: 'Are your courses online or in-person?', a: 'All our courses are conducted online with live sessions. Recordings are provided so you can learn at your own pace. Certificates are awarded upon completion.' },
