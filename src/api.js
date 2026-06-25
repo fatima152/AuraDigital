@@ -17,3 +17,22 @@ export const subscribeNewsletter = async (email) => {
   });
   return res.json();
 };
+
+export const submitEnrollment = async (data) => {
+  const res = await fetch(`${API_URL}/api/enroll`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+};
+
+export const getEnrollCount = async () => {
+  try {
+    const res = await fetch(`${API_URL}/api/enroll/count`);
+    const data = await res.json();
+    return data.count;
+  } catch {
+    return 20;
+  }
+};

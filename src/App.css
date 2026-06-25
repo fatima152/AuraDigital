@@ -156,6 +156,27 @@ section.services { padding: 6rem 3rem; }
 .course-enroll { background: rgba(124, 111, 255, 0.12); color: var(--accent); border: none; padding: 0.5rem 1.2rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
 .course-enroll:hover { background: var(--accent); color: white; transform: translateY(-1px); }
 
+/* ========== ENROLLMENT COUNTER ========== */
+.enroll-counter { display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-top: 2rem; padding: 1rem 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 999px; width: fit-content; margin-left: auto; margin-right: auto; }
+.enroll-counter-number { font-size: 1.8rem; font-weight: 800; color: var(--accent); letter-spacing: -1px; }
+.enroll-counter-label { font-size: 0.88rem; color: var(--muted); font-weight: 500; }
+
+/* ========== ENROLLMENT MODAL ========== */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 200; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.modal-content { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; max-width: 460px; width: 100%; position: relative; }
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--muted); font-size: 1.6rem; cursor: pointer; line-height: 1; padding: 0.3rem; }
+.modal-close:hover { color: var(--text); }
+.modal-content h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem; }
+.modal-content .form-group label { font-size: 0.78rem; font-weight: 600; color: var(--text); opacity: 0.8; margin-bottom: 0.2rem; }
+.modal-content input { padding: 0.85rem 1.1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg3); color: var(--text); outline: none; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; width: 100%; box-sizing: border-box; transition: border-color 0.25s; }
+.modal-content input:focus { border-color: var(--accent); }
+.modal-content .form-group { margin-bottom: 1rem; }
+.form-error { color: #ff6b6b; font-size: 0.82rem; margin-top: 0.3rem; }
+.modal-success { text-align: center; padding: 1rem 0; }
+.modal-success-icon { font-size: 3rem; width: 64px; height: 64px; border-radius: 50%; background: rgba(0,212,170,0.15); color: var(--accent3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.modal-success h3 { margin-bottom: 0.5rem; }
+.modal-success p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+
 /* ========== FAQ (Home) ========== */
 .faq-section { padding: 6rem 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .faq-list { max-width: 700px; margin: 0 auto; }

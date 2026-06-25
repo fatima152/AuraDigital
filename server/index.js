@@ -84,6 +84,33 @@ app.post('/api/newsletter', async (req, res) => {
   res.json({ success: true, message: 'Successfully subscribed!' });
 });
 
+app.post('/api/enroll', async (req, res) => {
+  const { name, email, phone, course } = req.body;
+  if (!name || !email || !course) {
+    return res.status(400).json({ success: false, message: 'Name, email, and course are required.' });
+  }
+  appendToFile('enrollments.json', { name, email, phone, course });
+  console.log(`New enrollment: ${name} — ${course}`);
+
+  await sendEmail({
+    to: process.env.EMAIL_USER || 'skillora836@gmail.com',
+    subject: `New Enrollment: ${name} — ${course}`,
+    html: `<h2>New Course Enrollment</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
+      <p><strong>Course:</strong> ${course}</p>`,
+  });
+
+  res.json({ success: true, message: `You're enrolled in ${course}! We'll contact you shortly.` });
+});
+
+app.get('/api/enroll/count', (req, res) => {
+  const filePath = path.join(DATA_DIR, 'enrollments.json');
+  const entries = fs.existsSync(filePath) ? JSON.parse(fs.readFileSync(filePath, 'utf-8')) : [];
+  res.json({ count: entries.length });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });

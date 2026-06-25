@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { getEnrollCount } from '../../api';
 import { CodeIcon, ChartIcon, DesignIcon, SocialIcon } from '../Icons';
+import EnrollmentModal from '../EnrollmentModal';
 
 const coursesData = [
   { icon: CodeIcon, level: 'Beginner → Advanced', levelColor: 'var(--accent)', title: 'Web Development Bootcamp', description: 'HTML, CSS, JavaScript, and React — build real websites from scratch and deploy them live.', duration: '8 Weeks · Certificate', bg: 'rgba(124,111,255,0.08)' },
@@ -10,6 +12,19 @@ const coursesData = [
 ];
 
 const CoursesSection = () => {
+  const [enrollCount, setEnrollCount] = useState(20);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState('');
+
+  useEffect(() => {
+    getEnrollCount().then(setEnrollCount);
+  }, []);
+
+  const openEnroll = (course) => {
+    setSelectedCourse(course);
+    setModalOpen(true);
+  };
+
   const containerVariants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.1 } }
@@ -29,6 +44,16 @@ const CoursesSection = () => {
         </div>
 
         <motion.div
+          className="enroll-counter"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="enroll-counter-number">{enrollCount}+</span>
+          <span className="enroll-counter-label">Students Enrolled</span>
+        </motion.div>
+
+        <motion.div
           className="courses-grid"
           variants={containerVariants}
           initial="hidden"
@@ -46,9 +71,7 @@ const CoursesSection = () => {
                   <p>{course.description}</p>
                   <div className="course-meta">
                     <span>{course.duration}</span>
-                    <Link to="/contact" style={{ textDecoration: 'none' }}>
-                      <button className="course-enroll">Enroll Now</button>
-                    </Link>
+                    <button className="course-enroll" onClick={() => openEnroll(course.title)}>Enroll Now</button>
                   </div>
                 </div>
               </motion.div>
@@ -56,6 +79,7 @@ const CoursesSection = () => {
           })}
         </motion.div>
       </div>
+      <EnrollmentModal isOpen={modalOpen} onClose={() => setModalOpen(false)} course={selectedCourse} />
     </section>
   );
 };
