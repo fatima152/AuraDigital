@@ -12,10 +12,15 @@ const EnrollmentModal = ({ isOpen, onClose, course }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
-    const res = await submitEnrollment({ ...form, course });
-    setMsg(res.message);
-    setStatus(res.success ? 'success' : 'error');
-    if (res.success) setForm({ name: '', email: '', phone: '' });
+    try {
+      const res = await submitEnrollment({ ...form, course });
+      setMsg(res.message);
+      setStatus(res.success ? 'success' : 'error');
+      if (res.success) setForm({ name: '', email: '', phone: '' });
+    } catch {
+      setMsg('Network error — please check if the server is running.');
+      setStatus('error');
+    }
   };
 
   return (
