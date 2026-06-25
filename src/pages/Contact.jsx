@@ -78,7 +78,7 @@ const Contact = () => {
               </div>
 
               <div className="contact-social">
-                <a href="#" className="social-link">Instagram</a>
+                <a href="https://www.instagram.com/skilloraofficial836" target="_blank" rel="noopener noreferrer" className="social-link">Instagram</a>
                 <a href="#" className="social-link">TikTok</a>
                 <a href="#" className="social-link">YouTube</a>
                 <a href="#" className="social-link">Facebook</a>
